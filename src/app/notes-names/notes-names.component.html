@@ -1,4 +1,8 @@
-<div class="notescontainer" *ngIf="!addMode">
+<div class="container">
+    <div class="notescontainer" *ngIf="!addMode">
         <app-search></app-search>
         <button (click)="addNote()">Add note</button>
+    </div>
+    <app-notes-descriptions></app-notes-descriptions>
+    <button *ngIf="addMode" (click)="goBack()">Go back</button>
 </div>

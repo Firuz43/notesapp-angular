@@ -21,4 +21,8 @@ export class NotesNamesComponent implements OnInit {
     console.log('Added new note')
     this.addMode = true
   }
+
+  goBack(): void {
+    this.addMode = false
+  }
 }
