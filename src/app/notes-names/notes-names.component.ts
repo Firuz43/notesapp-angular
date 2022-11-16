@@ -12,8 +12,7 @@ export class NotesNamesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  //Excepting value from app.component.ts
-  @Input() fromParent: boolean = true
+
 
   addMode: boolean = false;
 
