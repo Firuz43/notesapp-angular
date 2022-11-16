@@ -16,13 +16,20 @@ export class NotesDescriptionsComponent implements OnInit {
   //Getting addMode from notes-name (parent component)
   @Input() addMode: boolean = false
 
+  notes: any = []
 
   onGetData() {
     this.http.fetchData().subscribe((res) => {
       console.log(res)
+      this.notes = res;
     })
   }
 
-
+  notesCreate(notes: { id: string, title: string, description: string, date: Date }) {
+    if (this.addMode) {
+      this.http.createNote(notes);
+      console.log('added successfully')
+    }
+  }
 
 }

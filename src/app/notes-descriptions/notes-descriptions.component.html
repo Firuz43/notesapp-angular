@@ -1,9 +1,13 @@
 <div class="content">
     <h3>Notes description</h3>
-    <form #myForm *ngIf="addMode">
-        <input type="text" placeholder="Note name" name="name">
-        <input type="text" placeholder="description" name="description">
-        <input type="date" placeholder="date" name="date">
-        <input type="button" value="Add note">
+    <div *ngFor="let data of notes" >
+        <p *ngIf="!addMode">{{data.description}}</p>
+    </div>
+    <form #myForm="ngForm" *ngIf="addMode" (ngSubmit)="notesCreate(myForm.value)">
+        <input type="text" placeholder="Note name" name="title" ngModel>
+        <input type="text" placeholder="description" name="description" ngModel>
+        <input type="date" placeholder="date" name="date" ngModel>
+        <!-- <button (click)="notesCreate(myForm.value)">Add</button> -->
+        <input type="submit" value="Add note">
     </form>
 </div>

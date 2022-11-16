@@ -2,7 +2,10 @@
     <div class="notescontainer" *ngIf="!addMode">
         <app-search></app-search>
         <button (click)="addNote()">Add note</button>
-        <p *ngFor="let data of notes">{{data.title}}</p>
+        <div *ngFor="let data of notes">
+            <p >{{data.title}}</p>
+            <p>{{data.date}}</p>
+        </div>
     </div>
     <app-notes-descriptions [addMode]="addMode"></app-notes-descriptions>
     <button *ngIf="addMode" (click)="goBack()">Go back</button>
