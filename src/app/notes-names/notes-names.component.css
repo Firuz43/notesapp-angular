@@ -6,6 +6,7 @@
     background-color: green;
     justify-content: space-around;
     height: 300px;
+    border-radius: 5px;
 }
 
 .notescontainer {
