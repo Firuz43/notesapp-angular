@@ -1,3 +1,9 @@
 <div class="content">
-    <p>notes-descriptions works!</p>
+    <h3>Notes description</h3>
+    <form #myForm *ngIf="addMode">
+        <input type="text" placeholder="Note name" name="name">
+        <input type="text" placeholder="description" name="description">
+        <input type="date" placeholder="date" name="date">
+        <input type="button" value="Add note">
+    </form>
 </div>

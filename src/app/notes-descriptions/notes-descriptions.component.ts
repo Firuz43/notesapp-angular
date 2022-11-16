@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NotesService } from '../services/notes.service';
 
 @Component({
@@ -13,6 +13,9 @@ export class NotesDescriptionsComponent implements OnInit {
   ngOnInit(): void {
     this.onGetData()
   }
+  //Getting addMode from notes-name (parent component)
+  @Input() addMode: boolean = false
+
 
   onGetData() {
     this.http.fetchData().subscribe((res) => {
