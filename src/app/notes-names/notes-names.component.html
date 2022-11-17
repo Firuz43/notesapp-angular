@@ -1,15 +1,17 @@
 <div class="container">
     <div class="notescontainer" *ngIf="!addMode">
+        <!-- Getting data from search component from @Output -->
         <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
         <button class="addbtn" (click)="addNote()">Add note</button>
         <div *ngFor="let data of notes">
-            <!-- This div checking search functionality-->
+            <!-- This div checking search functionality -->
             <div class="notes-container" *ngIf="searchText === '' || data.title.toLowerCase().includes(searchText)">
                 <p class="title">{{data.title}}</p>
                 <p class="date">{{data.date}}</p>
             </div>
         </div>
     </div>
+    <!-- Here we are passing data to app-notes to it's child component -->
     <app-notes-descriptions [addMode]="addMode"></app-notes-descriptions>
     <button class="backbtn" *ngIf="addMode" (click)="goBack()">Go back</button>
 </div>
