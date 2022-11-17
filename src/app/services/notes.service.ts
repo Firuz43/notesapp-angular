@@ -19,9 +19,13 @@ export class NotesService {
     })
   }
 
-  deleteNote(id: number) {
-    return this.http.delete('http://localhost:3000/notes/' + id).subscribe((res) => {
+  deleteNote(noteId: any) {
+    return this.http.delete('http://localhost:3000/notes/' + noteId).subscribe((res) => {
       console.log('Deleted successfully')
     })
+  }
+
+  updateProduct(noteId: any, value: any) {
+    return this.http.put('http://localhost:3000/notes/' + noteId, value).subscribe()
   }
 }

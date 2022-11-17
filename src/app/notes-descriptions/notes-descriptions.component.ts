@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { NotesService } from '../services/notes.service';
 
 @Component({
@@ -16,7 +17,11 @@ export class NotesDescriptionsComponent implements OnInit {
   //Getting addMode from notes-name (parent component)
   @Input() addMode: boolean = false
 
+  updateMode: boolean = false;
+
+  currentNoteId: number | any;
   notes: any = []
+  @ViewChild('myForm') form: NgForm | any;
 
   onGetData() {
     this.noteService.fetchData().subscribe((res) => {
@@ -26,13 +31,31 @@ export class NotesDescriptionsComponent implements OnInit {
   }
 
   notesCreate(notes: { id: string, title: string, description: string, date: Date }) {
-    if (this.addMode) {
+    if (!this.updateMode) {
       this.noteService.createNote(notes);
       console.log('added successfully')
+    } else {
+      this.noteService.updateProduct(this.currentNoteId, notes)
     }
   }
 
   onDelete(id: number) {
     this.noteService.deleteNote(id)
+  }
+
+  onEdit(id: number) {
+
+    this.currentNoteId = id;
+
+    let currentNote = this.notes.find((n: { id: number; }) => { return n.id === id })
+    console.log(currentNote)
+
+    this.form.setValue({
+      title: currentNote.title,
+      description: currentNote.description,
+      date: currentNote.id
+    })
+
+    this.updateMode = true;
   }
 }
