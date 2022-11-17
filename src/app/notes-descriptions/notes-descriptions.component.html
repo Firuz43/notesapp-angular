@@ -1,7 +1,11 @@
 <div class="content">
     <h3>Notes description</h3>
     <div *ngFor="let data of notes">
-        <p *ngIf="!addMode">{{data.description}}</p>
+        <span *ngIf="!addMode">
+            <p >{{data.description}}</p>
+            <button (click)="onDelete(data.id)">Delete</button>
+            <button>Edit</button>
+        </span>
     </div>
     <form #myForm="ngForm" *ngIf="addMode" (ngSubmit)="notesCreate(myForm.value)">
         <input type="text" placeholder="Note name" name="title" ngModel >

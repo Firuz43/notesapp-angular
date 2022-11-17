@@ -8,7 +8,7 @@ import { NotesService } from '../services/notes.service';
 })
 export class NotesDescriptionsComponent implements OnInit {
 
-  constructor(private http: NotesService) { }
+  constructor(private noteService: NotesService) { }
 
   ngOnInit(): void {
     this.onGetData()
@@ -19,7 +19,7 @@ export class NotesDescriptionsComponent implements OnInit {
   notes: any = []
 
   onGetData() {
-    this.http.fetchData().subscribe((res) => {
+    this.noteService.fetchData().subscribe((res) => {
       console.log(res)
       this.notes = res;
     })
@@ -27,9 +27,12 @@ export class NotesDescriptionsComponent implements OnInit {
 
   notesCreate(notes: { id: string, title: string, description: string, date: Date }) {
     if (this.addMode) {
-      this.http.createNote(notes);
+      this.noteService.createNote(notes);
       console.log('added successfully')
     }
   }
 
+  onDelete(id: number) {
+    this.noteService.deleteNote(id)
+  }
 }

@@ -18,4 +18,10 @@ export class NotesService {
       console.log(res)
     })
   }
+
+  deleteNote(id: number) {
+    return this.http.delete('http://localhost:3000/notes/' + id).subscribe((res) => {
+      console.log('Deleted successfully')
+    })
+  }
 }
