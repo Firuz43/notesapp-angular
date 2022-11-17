@@ -1,6 +1,6 @@
 <div class="content">
     <h3>Notes description</h3>
-    <div *ngFor="let data of notes">
+    <div class="description" *ngFor="let data of notes">
         <span *ngIf="!addMode && !updateMode">
             <p >{{data?.description}}</p>
             <button class="delete-btn" (click)="onDelete(data.id)">Delete</button>

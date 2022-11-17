@@ -59,6 +59,7 @@ h1{
     border: none;
     outline: none;
     background-color: #27a327;
+    color: #fff;
 }
 
 
@@ -81,5 +82,15 @@ h1{
     background-color: coral;
     color: #fff;
     border-radius: 6px;
+}
+
+.description {
+    border: 1px solid rgb(103, 102, 102);
+    margin-bottom: 10px;
+    padding: 9px;
+}
+
+.description button {
+    margin-top: 10px;
 }
 
