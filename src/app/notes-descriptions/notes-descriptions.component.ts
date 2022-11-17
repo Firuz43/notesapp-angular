@@ -23,6 +23,7 @@ export class NotesDescriptionsComponent implements OnInit {
   notes: any = []
   @ViewChild('myForm') form: NgForm | any;
 
+
   onGetData() {
     this.noteService.fetchData().subscribe((res) => {
       console.log(res)

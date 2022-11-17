@@ -42,6 +42,5 @@ export class NotesNamesComponent implements OnInit {
 
   onSearchTextEntered(searchValue: string) {
     this.searchText = searchValue;
-    console.log(this.searchText);
   }
 }

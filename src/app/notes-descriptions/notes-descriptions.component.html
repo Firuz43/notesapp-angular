@@ -1,18 +1,20 @@
 <div class="content">
     <h3>Notes description</h3>
     <div *ngFor="let data of notes">
-        <span *ngIf="!addMode">
+        <span *ngIf="!addMode && !updateMode">
             <p >{{data?.description}}</p>
-            <p>{{data?.id}}</p>
-            <button (click)="onDelete(data.id)">Delete</button>
-            <button (click)="onEdit(data.id)">Edit</button>
+            <button class="delete-btn" (click)="onDelete(data.id)">Delete</button>
+            <button class="edit-btn" (click)="onEdit(data.id)">Edit</button>
         </span>
     </div>
-    <form #myForm="ngForm"  (ngSubmit)="notesCreate(myForm.value)">
-        <input type="text" placeholder="Note name" name="title" ngModel>
-        <input type="text" placeholder="description" name="description" ngModel>
-        <input type="date" placeholder="date" name="date" ngModel>
-        <!-- <button (click)="notesCreate(myForm.value)">Add</button> -->
-        <input type="submit" value="{{updateMode ? 'Update Note' : 'Add Note'}}">
-    </form>
+    <div class="form-container">
+        <form #myForm="ngForm"  (ngSubmit)="notesCreate(myForm.value)">
+            <h2 *ngIf="updateMode">Update Note</h2>
+            <input type="text" class="form-control" placeholder="Note name" name="title" ngModel>
+            <input type="text" class="form-control" placeholder="description" name="description" ngModel>
+            <input type="date" class="form-control" placeholder="date" name="date" ngModel>
+            <!-- <button (click)="notesCreate(myForm.value)">Add</button> -->
+            <input class="btn" type="submit" value="{{updateMode ? 'Update Note' : 'Add Note'}}">
+        </form>
+    </div>
 </div>

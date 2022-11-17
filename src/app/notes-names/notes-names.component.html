@@ -1,12 +1,15 @@
 <div class="container">
     <div class="notescontainer" *ngIf="!addMode">
         <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
-        <button (click)="addNote()">Add note</button>
+        <button class="addbtn" (click)="addNote()">Add note</button>
         <div *ngFor="let data of notes">
-            <p >{{data.title}}</p>
-            <p>{{data.date}}</p>
+            <!-- This div checking search functionality-->
+            <div class="notes-container" *ngIf="searchText === '' || data.title.toLowerCase().includes(searchText)">
+                <p class="title">{{data.title}}</p>
+                <p class="date">{{data.date}}</p>
+            </div>
         </div>
     </div>
     <app-notes-descriptions [addMode]="addMode"></app-notes-descriptions>
-    <button *ngIf="addMode" (click)="goBack()">Go back</button>
+    <button class="backbtn" *ngIf="addMode" (click)="goBack()">Go back</button>
 </div>
