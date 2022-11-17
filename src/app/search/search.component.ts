@@ -11,8 +11,11 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  // Creating property for keep tracking input value
   enteredSearchValue: string = ''
 
+  // using output decorator and EventEmitter passing searchTextChanged to it's parent component
   @Output() searchTextChanged: EventEmitter<string> = new EventEmitter<string>();
 
   onSearchTextChanged() {
