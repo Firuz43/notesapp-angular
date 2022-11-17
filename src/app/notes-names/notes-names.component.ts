@@ -8,6 +8,7 @@ import { NotesService } from '../services/notes.service';
 })
 export class NotesNamesComponent implements OnInit {
 
+  // passing NotesService to variable http
   constructor(private http: NotesService) { }
 
 
@@ -42,6 +43,7 @@ export class NotesNamesComponent implements OnInit {
     })
   }
 
+  // Passing searchText to our function
   onSearchTextEntered(searchValue: string) {
     this.searchText = searchValue;
   }
