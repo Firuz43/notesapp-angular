@@ -25,7 +25,6 @@ export class NotesNamesComponent implements OnInit {
 
 
   addNote(): void {
-    console.log('Added new note')
     this.addMode = true
   }
 
@@ -35,7 +34,6 @@ export class NotesNamesComponent implements OnInit {
 
   getData() {
     this.http.fetchData().subscribe((res) => {
-      console.log(res)
       this.notes = res
     })
   }

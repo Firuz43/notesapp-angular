@@ -26,7 +26,6 @@ export class NotesDescriptionsComponent implements OnInit {
 
   onGetData() {
     this.noteService.fetchData().subscribe((res) => {
-      console.log(res)
       this.notes = res;
     })
   }
@@ -34,7 +33,6 @@ export class NotesDescriptionsComponent implements OnInit {
   notesCreate(notes: { id: string, title: string, description: string, date: Date }) {
     if (!this.updateMode) {
       this.noteService.createNote(notes);
-      console.log('added successfully')
     } else {
       this.noteService.updateProduct(this.currentNoteId, notes)
       this.updateMode = false
@@ -50,7 +48,6 @@ export class NotesDescriptionsComponent implements OnInit {
     this.currentNoteId = id;
 
     let currentNote = this.notes.find((n: { id: number; }) => { return n.id === id })
-    console.log(currentNote)
 
     this.form.setValue({
       title: currentNote.title,
