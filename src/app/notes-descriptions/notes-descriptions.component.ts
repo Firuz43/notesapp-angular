@@ -49,22 +49,29 @@ export class NotesDescriptionsComponent implements OnInit {
     }
   }
 
+  // Delet method making call to noteService passing id to it and deleting note
   onDelete(id: number) {
     this.noteService.deleteNote(id)
   }
 
+  // Here we are recieving id from view and the passing it to our currentNoteId
   onEdit(id: number) {
 
+    // currentNoteId recieving id from view
     this.currentNoteId = id;
 
+    // Here when we are recieving id from view we are checking using find() method based on 
+    //id and storing it to our currentNote
     let currentNote = this.notes.find((n: { id: number; }) => { return n.id === id })
 
+    // When we got the currentNot that we got from view we are filling it's value to a form using setValue()
     this.form.setValue({
       title: currentNote.title,
       description: currentNote.description,
       date: currentNote.id
     })
 
+    //Turning on updateMethod
     this.updateMode = true;
   }
 }
