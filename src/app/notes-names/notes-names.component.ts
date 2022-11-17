@@ -12,6 +12,8 @@ export class NotesNamesComponent implements OnInit {
 
 
   notes: any = []
+  searchText: string = '';
+
 
   ngOnInit(): void {
     this.getData()
@@ -36,5 +38,10 @@ export class NotesNamesComponent implements OnInit {
       console.log(res)
       this.notes = res
     })
+  }
+
+  onSearchTextEntered(searchValue: string) {
+    this.searchText = searchValue;
+    console.log(this.searchText);
   }
 }

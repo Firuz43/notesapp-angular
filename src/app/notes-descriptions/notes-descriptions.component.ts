@@ -36,6 +36,7 @@ export class NotesDescriptionsComponent implements OnInit {
       console.log('added successfully')
     } else {
       this.noteService.updateProduct(this.currentNoteId, notes)
+      this.updateMode = false
     }
   }
 
