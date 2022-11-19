@@ -2,8 +2,8 @@
   "notes": [
     {
       "title": "Check the store ",
-      "description": "buy some foods for dinner",
-      "date": "2023-02-16",
+      "description": "buy some food for dinner",
+      "date": "2022-11-18",
       "id": 1
     },
     {
@@ -15,7 +15,7 @@
     {
       "title": "Project",
       "description": "Finishing project before deadline ",
-      "date": "2022-12-01",
+      "date": 3,
       "id": 3
     },
     {
