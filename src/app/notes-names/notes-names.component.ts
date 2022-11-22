@@ -38,6 +38,10 @@ export class NotesNamesComponent implements OnInit {
     this.addMode = false
   }
 
+  goTo() {
+    this.router.navigate(['description'], { queryParams: { data: this.addMode = false } })
+  }
+
   // Making request using HttpClient for getting data from dj.json
   getData() {
     this.http.fetchData().subscribe((res) => {

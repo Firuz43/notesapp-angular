@@ -4,7 +4,7 @@
         <!-- Getting data from search component from @Output -->
         <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
         <button class="addbtn" (click)="addNote()">Add note</button>
-        <div *ngFor="let data of notes">
+        <div *ngFor="let data of notes" class="notes" routerLink="description">
             <!-- This div checking search functionality -->
             <div class="notes-container" *ngIf="searchText === '' || data.title.toLowerCase().includes(searchText)">
                 <p class="title">{{data.title}}</p>

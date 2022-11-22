@@ -9,6 +9,7 @@ export class NotesService {
   constructor(private http: HttpClient) { }
 
   //Fetching data from our db.json making get request
+
   fetchData() {
     return this.http.get('http://localhost:3000/notes')
   }
