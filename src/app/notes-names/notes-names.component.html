@@ -3,7 +3,7 @@
         <h3>Notes Names</h3>
         <!-- Getting data from search component from @Output -->
         <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
-        <div *ngFor="let data of notes" class="notes" (click)="goTo()">
+        <div *ngFor="let data of notes" class="notes" routerLink="/note/{{data.id}}">
             <!-- This div checking search functionality -->
             <div class="notes-container" *ngIf="searchText === '' || data.title.toLowerCase().includes(searchText)">
                 <p class="title">{{data.title}}</p>

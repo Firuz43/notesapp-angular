@@ -1,4 +1,7 @@
 <h1>Hi</h1>
-<div *ngFor="let data of notes">
-    <p>{{data }}</p>
-</div>
+<!-- <div *ngFor="let data of notes">
+    <p>{{data.title }}</p>
+</div> -->
+
+<p>{{notes.title | async}}</p>
+<p>{{notes.description | async}}</p>

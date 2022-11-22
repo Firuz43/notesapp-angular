@@ -27,20 +27,16 @@ export class NotesNamesComponent implements OnInit {
     this.getData()
   }
 
-  // Truning on the addMode
-  addNote(): void {
-    this.router.navigate(['description'], { queryParams: { data: this.addMode } })
-    this.addMode = true
-  }
+
 
   // Turning off the addMode
   goBack(): void {
     this.addMode = false
   }
 
-  goTo() {
-    this.router.navigate(['description'], { queryParams: { data: this.addMode = false } })
-  }
+  // goTo() {
+  //   this.router.navigate(['description'], { queryParams: { data: this.addMode = false } })
+  // }
 
   // Making request using HttpClient for getting data from dj.json
   getData() {

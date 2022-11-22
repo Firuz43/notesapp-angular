@@ -7,7 +7,7 @@ import { NotesNamesComponent } from './notes-names/notes-names.component';
 const routes: Routes = [
   { path: 'notes', component: NotesNamesComponent },
   { path: 'description', component: NotesDescriptionsComponent },
-  { path: 'note', component: NoteComponent },
+  { path: 'note/:id', component: NoteComponent },
 
 ]
 

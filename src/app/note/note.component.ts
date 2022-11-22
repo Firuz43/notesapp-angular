@@ -24,6 +24,9 @@ export class NoteComponent implements OnInit {
       resolve(this.http.get('http://localhost:3000/notes').subscribe((res) => {
         this.notes = res
         console.log(this.notes)
+
+        this.noteId = this.acitavatedRoute.snapshot.paramMap.get('id');
+        this.note = this.notes.find((p: { id: any; }) => p.id === this.noteId)
       }))
 
     });
