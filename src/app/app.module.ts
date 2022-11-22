@@ -8,13 +8,15 @@ import { NotesDescriptionsComponent } from './notes-descriptions/notes-descripti
 import { SearchComponent } from './search/search.component';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
+import { NoteComponent } from './note/note.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NotesNamesComponent,
     NotesDescriptionsComponent,
-    SearchComponent
+    SearchComponent,
+    NoteComponent
   ],
   imports: [
     BrowserModule,
