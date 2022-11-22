@@ -21,12 +21,12 @@ export class NoteComponent implements OnInit {
 
   ngOnInit() {
     this.notes = new Promise((resolve, reject) => {
-      resolve(this.http.get('http://localhost:3000/notes').subscribe((res) => {
+      resolve(this.http.get('http://localhost:3000/notes').subscribe((res: any) => {
         this.notes = res
         console.log(this.notes)
 
         this.noteId = this.acitavatedRoute.snapshot.paramMap.get('id');
-        this.note = this.notes.find((p: { id: any; }) => p.id === this.noteId)
+        return this.note = this.notes.find((p: { id: any; }) => p.id === this.noteId)
       }))
 
     });
