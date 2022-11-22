@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NotesService } from '../services/notes.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { NotesService } from '../services/notes.service';
 export class NotesNamesComponent implements OnInit {
 
   // passing NotesService to variable http
-  constructor(private http: NotesService) { }
+  constructor(private http: NotesService, private router: Router) { }
 
 
   // Recieving data from db.json
@@ -28,6 +29,7 @@ export class NotesNamesComponent implements OnInit {
 
   // Truning on the addMode
   addNote(): void {
+    this.router.navigate(['description'], { queryParams: { data: this.addMode } })
     this.addMode = true
   }
 

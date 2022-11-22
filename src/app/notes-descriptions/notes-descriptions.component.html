@@ -1,8 +1,9 @@
 <div class="content">
     <h3>Notes description</h3>
+    <button (click)="goBack">Go Back</button>
     <div class="description" *ngFor="let data of notes">
         <!-- Displaying data when addMode and updateMode are false -->
-        <span *ngIf="!addMode && !updateMode">
+        <span *ngIf="!addMode">
             <p >{{data?.description}}</p>
             <!-- Getting id when iterating wit *ngFor and passing it to delete and edit funcitons -->
             <button class="delete-btn" (click)="onDelete(data.id)">Delete</button>

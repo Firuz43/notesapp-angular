@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NotesService } from '../services/notes.service';
 
 @Component({
@@ -10,13 +11,19 @@ import { NotesService } from '../services/notes.service';
 export class NotesDescriptionsComponent implements OnInit {
 
   // Storing NotesService to notesService variable
-  constructor(private noteService: NotesService) { }
+  constructor(private noteService: NotesService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.onGetData()
+
+    this.route.queryParams.subscribe((params: any) => {
+      console.log(params)
+      this.addMode = params
+    })
   }
   // Getting addMode from notes-name (parent component)
-  @Input() addMode: boolean = false
+  // @Input() addMode: boolean = false
+  addMode: boolean = false
 
   // Keep tracking updateMode
   updateMode: boolean = false;
@@ -31,12 +38,18 @@ export class NotesDescriptionsComponent implements OnInit {
   @ViewChild('myForm') form: NgForm | any;
 
 
+
   // Getting data from server (db.json) and storing it to our notes variable
   onGetData() {
     this.noteService.fetchData().subscribe((res) => {
       this.notes = res;
     })
   }
+
+  goBack(): void {
+    this.router.navigate([''], { queryParams: { data: this.addMode = false } })
+  }
+
 
   // notesCreate inside has updateProduct also if the updateMethod is false we are calling createNote() method
   // else if updateMode is true we are calling updateProduct

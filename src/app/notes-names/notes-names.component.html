@@ -1,5 +1,6 @@
 <div class="container">
-    <div class="notescontainer" *ngIf="!addMode">
+    <div class="notescontainer">
+        <h3>Notes Names</h3>
         <!-- Getting data from search component from @Output -->
         <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
         <button class="addbtn" (click)="addNote()">Add note</button>
@@ -12,6 +13,6 @@
         </div>
     </div>
     <!-- Here we are passing data to app-notes to it's child component -->
-    <app-notes-descriptions [addMode]="addMode"></app-notes-descriptions>
+    <!-- <app-notes-descriptions [addMode]="addMode"></app-notes-descriptions> -->
     <button class="backbtn" *ngIf="addMode" (click)="goBack()">Go back</button>
 </div>
