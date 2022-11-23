@@ -18,6 +18,7 @@ export class NoteComponent implements OnInit {
   noteId: any;
   notes: any = [];
 
+  addMode: boolean = false
 
   ngOnInit() {
     this.notes = new Promise((resolve, reject) => {
@@ -27,8 +28,17 @@ export class NoteComponent implements OnInit {
 
         this.noteId = this.acitavatedRoute.snapshot.paramMap.get('id');
         return this.note = this.notes.find((p: { id: any; }) => p.id == this.noteId)
+
       }))
 
+      this.acitavatedRoute.queryParams.subscribe((params: any) => {
+        console.log('loged the params', params)
+        this.addMode = params
+      })
+
+      this.acitavatedRoute.data.subscribe(data => {
+        console.log('after', data)
+      })
     });
 
 

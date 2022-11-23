@@ -22,6 +22,7 @@ export class NotesNamesComponent implements OnInit {
   // Creating a property for tracking addMode
   addMode: boolean = false;
 
+  fetchProduct: boolean = false;
 
   ngOnInit(): void {
     this.getData()
@@ -36,6 +37,10 @@ export class NotesNamesComponent implements OnInit {
 
   goTo() {
     this.router.navigate(['description'], { queryParams: { data: this.addMode = false } })
+  }
+
+  goto(id: any) {
+    this.router.navigate(['/note', id], { queryParams: { data: this.fetchProduct = true } })
   }
 
   // Making request using HttpClient for getting data from dj.json

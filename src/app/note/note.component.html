@@ -2,6 +2,10 @@
     <p>{{data.description }}</p>
 </div> -->
 <div *ngIf="note !== undefined" class="container">
-    <p>{{note.description }}</p>
+    <div class="content">
+        <p>{{note.title}}</p>
+        <p>{{note.description}}</p>
+        <p>{{note.date}}</p>
+        <button (click)="onProductsFetch()">Fetch</button>
+    </div>
 </div>
-<button (click)="onProductsFetch()">Fetch</button>

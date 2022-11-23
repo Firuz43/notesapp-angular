@@ -1,3 +1,28 @@
 .container {
-    background-color: red;
+    background-color: rgb(230, 226, 226);
+    padding: 15px;
+    width: 300px;
+    height: 100%;
+}
+
+.content {
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.content p {
+    font-size: 20px;
+}
+
+button {
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 28px;
+    border: none;
+    outline: none;
+    background-color: #27a327;
+    color: #fff;
+    border-radius: 6px;
 }
