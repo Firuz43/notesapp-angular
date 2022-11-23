@@ -16,16 +16,13 @@ export class NotesService {
 
   // Making post request to our db.json
   createNote(notes: { id: string, title: string, description: string, date: Date }) {
-    console.log(notes)
     this.http.post('http://localhost:3000/notes', notes).subscribe((res) => {
-      console.log(res)
     })
   }
 
   // Sending delete request 
   deleteNote(noteId: any) {
     return this.http.delete('http://localhost:3000/notes/' + noteId).subscribe((res) => {
-      console.log('Deleted successfully')
     })
   }
 
