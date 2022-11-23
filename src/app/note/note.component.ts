@@ -36,9 +36,7 @@ export class NoteComponent implements OnInit {
         this.addMode = params
       })
 
-      this.acitavatedRoute.data.subscribe(data => {
-        console.log('after', data)
-      })
+
     });
 
 

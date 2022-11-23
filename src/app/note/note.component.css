@@ -12,6 +12,7 @@
 
 .content p {
     font-size: 20px;
+    margin: 5px;
 }
 
 button {
@@ -25,4 +26,11 @@ button {
     background-color: #27a327;
     color: #fff;
     border-radius: 6px;
+}
+
+
+.date {
+    font-family: fantasy;
+    color:  rgb(97, 97, 244);
+    font-size: 14px;
 }

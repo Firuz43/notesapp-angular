@@ -5,7 +5,9 @@
     <div class="content">
         <p>{{note.title}}</p>
         <p>{{note.description}}</p>
-        <p>{{note.date}}</p>
+        <span class="date">
+            <p>{{note.date}}</p>
+        </span>
         <button (click)="onProductsFetch()">Fetch</button>
     </div>
 </div>
