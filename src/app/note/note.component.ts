@@ -14,7 +14,7 @@ export class NoteComponent implements OnInit {
   constructor(private notesService: NotesService, private acitavatedRoute: ActivatedRoute, private http: HttpClient) { }
 
 
-  note: any = [];
+  note: any | undefined = [];
   noteId: any;
   notes: any = [];
 
@@ -26,7 +26,7 @@ export class NoteComponent implements OnInit {
         console.log(this.notes)
 
         this.noteId = this.acitavatedRoute.snapshot.paramMap.get('id');
-        return this.note = this.notes.find((p: { id: any; }) => p.id === this.noteId)
+        return this.note = this.notes.find((p: { id: any; }) => p.id == this.noteId)
       }))
 
     });
@@ -38,6 +38,19 @@ export class NoteComponent implements OnInit {
     // console.log(this.note)
 
   }
+
+  onProductsFetch() {
+    this.notes = new Promise((resolve, reject) => {
+      resolve(this.http.get('http://localhost:3000/notes').subscribe((res: any) => {
+        this.notes = res
+        console.log(this.notes)
+
+        this.noteId = this.acitavatedRoute.snapshot.paramMap.get('id');
+        return this.note = this.notes.find((p: { id: any; }) => p.id == this.noteId)
+      }))
+    })
+  }
+
 
   getData() {
     this.notesService.fetchData().subscribe((res) => {

@@ -46,9 +46,6 @@ export class NotesDescriptionsComponent implements OnInit {
     })
   }
 
-  goBack(): void {
-    this.router.navigate([''], { queryParams: { data: this.addMode = false } })
-  }
 
 
   // notesCreate inside has updateProduct also if the updateMethod is false we are calling createNote() method
