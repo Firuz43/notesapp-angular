@@ -24,7 +24,6 @@ export class NoteComponent implements OnInit {
     this.notes = new Promise((resolve, reject) => {
       resolve(this.http.get('http://localhost:3000/notes').subscribe((res: any) => {
         this.notes = res
-        console.log(this.notes)
 
         this.noteId = this.acitavatedRoute.snapshot.paramMap.get('id');
         return this.note = this.notes.find((p: { id: any; }) => p.id == this.noteId)
@@ -32,7 +31,6 @@ export class NoteComponent implements OnInit {
       }))
 
       this.acitavatedRoute.queryParams.subscribe((params: any) => {
-        console.log('loged the params', params)
         this.addMode = params
       })
 
@@ -51,8 +49,6 @@ export class NoteComponent implements OnInit {
     this.notes = new Promise((resolve, reject) => {
       resolve(this.http.get('http://localhost:3000/notes').subscribe((res: any) => {
         this.notes = res
-        console.log(this.notes)
-
         this.noteId = this.acitavatedRoute.snapshot.paramMap.get('id');
         return this.note = this.notes.find((p: { id: any; }) => p.id == this.noteId)
       }))
@@ -63,7 +59,6 @@ export class NoteComponent implements OnInit {
   getData() {
     this.notesService.fetchData().subscribe((res) => {
       this.notes = res
-      console.log(this.notes)
     })
   }
 }
