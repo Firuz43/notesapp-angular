@@ -1,5 +1,6 @@
 # Test
 
+First run the json server command to activate our local server to get the data
 1 - json-server --watch db.json
 
 2 - ng serve
