@@ -26,7 +26,7 @@ export class NoteComponent implements OnInit {
         this.notes = res
 
         this.noteId = this.acitavatedRoute.snapshot.paramMap.get('id');
-        return this.note = this.notes.find((p: { id: any; }) => p.id == this.noteId)
+        this.note = this.notes.find((p: { id: any; }) => p.id == this.noteId)
 
       }))
 
@@ -50,7 +50,7 @@ export class NoteComponent implements OnInit {
       resolve(this.http.get('http://localhost:3000/notes').subscribe((res: any) => {
         this.notes = res
         this.noteId = this.acitavatedRoute.snapshot.paramMap.get('id');
-        return this.note = this.notes.find((p: { id: any; }) => p.id == this.noteId)
+        this.note = this.notes.find((p: { id: any; }) => p.id == this.noteId)
       }))
     })
   }
