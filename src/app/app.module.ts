@@ -9,6 +9,7 @@ import { SearchComponent } from './search/search.component';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { NoteComponent } from './note/note.component';
+import { MainComponent } from './shop/main/main.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NoteComponent } from './note/note.component';
     NotesNamesComponent,
     NotesDescriptionsComponent,
     SearchComponent,
-    NoteComponent
+    NoteComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
