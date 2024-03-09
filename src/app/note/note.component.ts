@@ -8,6 +8,7 @@ import { NotesService } from '../services/notes.service';
   templateUrl: './note.component.html',
   styleUrls: ['./note.component.css']
 })
+//
 export class NoteComponent implements OnInit {
 
 
