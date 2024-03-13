@@ -49,7 +49,7 @@ export class NotesNamesComponent implements OnInit {
       this.notes = res
     })
   }
-
+  //
   // Passing searchText to our function
   onSearchTextEntered(searchValue: string) {
     this.searchText = searchValue;
