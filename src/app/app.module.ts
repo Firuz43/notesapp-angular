@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { NoteComponent } from './note/note.component';
 import { MainComponent } from './shop/main/main.component';
+import { NextComponent } from './shop/next/next.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MainComponent } from './shop/main/main.component';
     NotesDescriptionsComponent,
     SearchComponent,
     NoteComponent,
-    MainComponent
+    MainComponent,
+    NextComponent
   ],
   imports: [
     BrowserModule,

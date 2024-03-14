@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,11 @@ import { Injectable } from '@angular/core';
 })
 export class ShopServiceService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+
+  fetchData() {
+    return this.http.get('http://localhost:8484/api/findall');
+  }
+
 }
