@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { NoteComponent } from './note/note.component';
 import { MainComponent } from './shop/main/main.component';
 import { NextComponent } from './shop/next/next.component';
+import { NavbarComponent } from './shop/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NextComponent } from './shop/next/next.component';
     SearchComponent,
     NoteComponent,
     MainComponent,
-    NextComponent
+    NextComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
